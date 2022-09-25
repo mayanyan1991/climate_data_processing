@@ -1,0 +1,13 @@
+/mnt/c/Users/yama4971/Desktop/his_data/tmp/
+#pre of hottest season
+cdo -b 64 yearmaxidx tmp_1961_2019.runmean.nc tmp_1961_2019.runmean.yearmaxidx.nc
+cdo -b 64 selyearidx tmp_1961_2019.runmean.yearmaxidx.nc pre_1961_2019.runsum.nc pre_1961_2019.runsum.sel.nc
+#tmp of wettest quarter
+cdo -b 64 yearmaxidx pre_1961_2019.runsum.nc pre_1961_2019.runsum.yearmaxidx.nc
+cdo -b 64 selyearidx pre_1961_2019.runsum.yearmaxidx.nc tmp_1961_2019.runmean.nc tmp_1961_2019.runmean.sel.nc
+#tmp of driest quarter
+cdo -b 64 yearminidx pre_1961_2019.runsum.shift.nc pre_1961_2019.runsum.yearminidx.nc
+cdo -b 64 selyearidx pre_1961_2019.runsum.yearminidx.nc tmp_1961_2019.runmean.shift.nc tmp_1961_2019.runmean.shift.sel.nc
+#pre of coldest quarter
+cdo -b 64 yearminidx tmp_1961_2019.runmean.shift.nc tmp_1961_2019.runmean.yearminidx.nc
+cdo -b 64 selyearidx tmp_1961_2019.runmean.yearminidx.nc pre_1961_2019.runsum.shift.nc pre_1961_2019.runsum.shift.sel.nc
